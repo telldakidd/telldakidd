@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexusAI — AI Consultancy</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">NexusAI</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#case-studies">Case Studies</a></li>
+        <li><a href="#contact" class="btn btn--nav">Get Started</a></li>
+      </ul>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#process">Process</a>
+      <a href="#case-studies">Case Studies</a>
+      <a href="#contact">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <canvas id="particleCanvas"></canvas>
+    </div>
+    <div class="container">
+      <div class="hero__content">
+        <div class="hero__badge">AI Strategy & Implementation</div>
+        <h1 class="hero__headline">
+          Transform Your Business<br />with <span class="gradient-text">Intelligent AI</span>
+        </h1>
+        <p class="hero__sub">
+          We help forward-thinking companies design, build, and deploy AI solutions that drive measurable outcomes — from strategy to production.
+        </p>
+        <div class="hero__actions">
+          <a href="#contact" class="btn btn--primary">Book a Free Discovery Call</a>
+          <a href="#services" class="btn btn--ghost">Explore Services</a>
+        </div>
+        <div class="hero__stats">
+          <div class="stat">
+            <span class="stat__num" data-target="150">0</span><span>+</span>
+            <span class="stat__label">Projects Delivered</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-target="98">0</span><span>%</span>
+            <span class="stat__label">Client Satisfaction</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-target="40">0</span><span>+</span>
+            <span class="stat__label">AI Specialists</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trusted By -->
+  <section class="trusted">
+    <div class="container">
+      <p class="trusted__label">Trusted by industry leaders</p>
+      <div class="trusted__logos">
+        <div class="logo-item">Acme Corp</div>
+        <div class="logo-item">TechVentures</div>
+        <div class="logo-item">GlobalBank</div>
+        <div class="logo-item">MedTech Inc</div>
+        <div class="logo-item">RetailPro</div>
+        <div class="logo-item">DataFlow</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What We Do</span>
+        <h2 class="section-title">End-to-End AI Services</h2>
+        <p class="section-sub">From ideation to deployment, we cover every phase of your AI journey with expertise and precision.</p>
+      </div>
+      <div class="services__grid">
+
+        <div class="service-card" data-delay="0">
+          <div class="service-card__icon">🧠</div>
+          <h3>AI Strategy & Roadmapping</h3>
+          <p>We audit your current operations and design a tailored AI adoption roadmap aligned with your business objectives.</p>
+          <ul class="service-card__list">
+            <li>AI readiness assessment</li>
+            <li>Use-case prioritization</li>
+            <li>ROI modeling</li>
+          </ul>
+        </div>
+
+        <div class="service-card" data-delay="100">
+          <div class="service-card__icon">⚙️</div>
+          <h3>Custom Model Development</h3>
+          <p>Fine-tuned LLMs, computer vision systems, and predictive models built for your specific data and domain.</p>
+          <ul class="service-card__list">
+            <li>LLM fine-tuning</li>
+            <li>Computer vision</li>
+            <li>Predictive analytics</li>
+          </ul>
+        </div>
+
+        <div class="service-card" data-delay="200">
+          <div class="service-card__icon">🔗</div>
+          <h3>AI Integration & APIs</h3>
+          <p>Seamlessly embed AI capabilities into your existing workflows, products, and infrastructure with robust APIs.</p>
+          <ul class="service-card__list">
+            <li>API design & development</li>
+            <li>Legacy system integration</li>
+            <li>Real-time inference pipelines</li>
+          </ul>
+        </div>
+
+        <div class="service-card" data-delay="0">
+          <div class="service-card__icon">🤖</div>
+          <h3>Agentic AI Systems</h3>
+          <p>Build autonomous AI agents that plan, execute, and iterate — handling complex workflows without human intervention.</p>
+          <ul class="service-card__list">
+            <li>Multi-agent orchestration</li>
+            <li>Tool-use & RAG pipelines</li>
+            <li>Autonomous workflow automation</li>
+          </ul>
+        </div>
+
+        <div class="service-card" data-delay="100">
+          <div class="service-card__icon">🛡️</div>
+          <h3>AI Governance & Ethics</h3>
+          <p>Ensure your AI systems are safe, fair, and compliant with emerging regulations and industry standards.</p>
+          <ul class="service-card__list">
+            <li>Bias auditing</li>
+            <li>Regulatory compliance</li>
+            <li>Responsible AI frameworks</li>
+          </ul>
+        </div>
+
+        <div class="service-card" data-delay="200">
+          <div class="service-card__icon">📊</div>
+          <h3>Data Engineering & MLOps</h3>
+          <p>Build the data foundation and operational infrastructure your AI models need to thrive in production.</p>
+          <ul class="service-card__list">
+            <li>Data pipeline architecture</li>
+            <li>Model monitoring & retraining</li>
+            <li>CI/CD for ML</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about__inner">
+        <div class="about__visual">
+          <div class="about__graphic">
+            <div class="graphic-ring ring-1"></div>
+            <div class="graphic-ring ring-2"></div>
+            <div class="graphic-ring ring-3"></div>
+            <div class="graphic-center">
+              <span>⬡</span>
+            </div>
+            <div class="graphic-node node-1">LLMs</div>
+            <div class="graphic-node node-2">Vision</div>
+            <div class="graphic-node node-3">MLOps</div>
+            <div class="graphic-node node-4">Agents</div>
+          </div>
+        </div>
+        <div class="about__text">
+          <span class="section-tag">About NexusAI</span>
+          <h2 class="section-title">Where Deep AI Expertise Meets Business Acumen</h2>
+          <p>Founded by AI researchers and enterprise technology leaders, NexusAI bridges the gap between cutting-edge artificial intelligence and real-world business value.</p>
+          <p>Our team of 40+ specialists — including PhD researchers, ML engineers, and business strategists — partners with companies across industries to unlock the transformative potential of AI.</p>
+          <div class="about__pillars">
+            <div class="pillar">
+              <div class="pillar__icon">🎯</div>
+              <div>
+                <strong>Outcome-Driven</strong>
+                <p>Every engagement is tied to measurable KPIs and business outcomes.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <div class="pillar__icon">🔬</div>
+              <div>
+                <strong>Research-Backed</strong>
+                <p>Our methods are grounded in the latest AI research and proven best practices.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <div class="pillar__icon">🤝</div>
+              <div>
+                <strong>True Partnership</strong>
+                <p>We embed within your team, transferring knowledge and building internal capability.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">How We Work</span>
+        <h2 class="section-title">Our Proven Process</h2>
+        <p class="section-sub">A structured, iterative approach that delivers results fast while managing risk.</p>
+      </div>
+      <div class="process__steps">
+        <div class="process-step">
+          <div class="process-step__num">01</div>
+          <div class="process-step__content">
+            <h3>Discover</h3>
+            <p>Deep-dive workshops to understand your business, data landscape, and AI opportunities. We identify quick wins and long-term bets.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-step__num">02</div>
+          <div class="process-step__content">
+            <h3>Design</h3>
+            <p>We architect the solution — models, data pipelines, integrations, and governance — with your team's input at every step.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-step__num">03</div>
+          <div class="process-step__content">
+            <h3>Build</h3>
+            <p>Agile sprints deliver working AI in weeks, not months. Regular demos keep stakeholders aligned and feedback loops tight.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-step__num">04</div>
+          <div class="process-step__content">
+            <h3>Deploy & Scale</h3>
+            <p>Production-grade deployment with monitoring, retraining pipelines, and handoff training so your team owns the outcome.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies -->
+  <section class="case-studies" id="case-studies">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Case Studies</span>
+        <h2 class="section-title">Real Results for Real Businesses</h2>
+      </div>
+      <div class="case-studies__grid">
+
+        <div class="case-card">
+          <div class="case-card__tag">Financial Services</div>
+          <h3>Fraud Detection at Scale</h3>
+          <p>Built a real-time anomaly detection system for a top-10 bank, reducing fraudulent transactions by 73% while cutting false positives in half.</p>
+          <div class="case-card__metrics">
+            <div class="metric">
+              <span class="metric__num">73%</span>
+              <span class="metric__label">Fraud Reduction</span>
+            </div>
+            <div class="metric">
+              <span class="metric__num">50%</span>
+              <span class="metric__label">Fewer False Positives</span>
+            </div>
+            <div class="metric">
+              <span class="metric__num">8wks</span>
+              <span class="metric__label">Time to Production</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-card__tag">Healthcare</div>
+          <h3>Clinical Document Intelligence</h3>
+          <p>Deployed an LLM-powered document processing system for a hospital network, automating 85% of clinical coding and reducing review time from hours to minutes.</p>
+          <div class="case-card__metrics">
+            <div class="metric">
+              <span class="metric__num">85%</span>
+              <span class="metric__label">Automation Rate</span>
+            </div>
+            <div class="metric">
+              <span class="metric__num">10x</span>
+              <span class="metric__label">Faster Processing</span>
+            </div>
+            <div class="metric">
+              <span class="metric__num">$4.2M</span>
+              <span class="metric__label">Annual Savings</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-card__tag">Retail & E-commerce</div>
+          <h3>AI-Powered Demand Forecasting</h3>
+          <p>Replaced legacy forecasting with an ML system across 50,000+ SKUs, cutting inventory costs by 22% and stockout events by 61%.</p>
+          <div class="case-card__metrics">
+            <div class="metric">
+              <span class="metric__num">22%</span>
+              <span class="metric__label">Cost Reduction</span>
+            </div>
+            <div class="metric">
+              <span class="metric__num">61%</span>
+              <span class="metric__label">Fewer Stockouts</span>
+            </div>
+            <div class="metric">
+              <span class="metric__num">50K+</span>
+              <span class="metric__label">SKUs Optimized</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Testimonials</span>
+        <h2 class="section-title">What Our Clients Say</h2>
+      </div>
+      <div class="testimonials__grid">
+
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p>"NexusAI didn't just build us a model — they transformed how our entire organization thinks about data and AI. The ROI was visible within the first quarter."</p>
+          <div class="testimonial-card__author">
+            <div class="author-avatar">SR</div>
+            <div>
+              <strong>Sarah Reynolds</strong>
+              <span>CTO, GlobalBank</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p>"Their team embedded with ours seamlessly. The knowledge transfer was exceptional — we now have internal AI capability we didn't have before."</p>
+          <div class="testimonial-card__author">
+            <div class="author-avatar">MK</div>
+            <div>
+              <strong>Marcus Klein</strong>
+              <span>VP Engineering, MedTech Inc</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p>"We evaluated 6 AI consultancies. NexusAI stood out because they asked the right questions before proposing solutions. That intellectual honesty is rare."</p>
+          <div class="testimonial-card__author">
+            <div class="author-avatar">JL</div>
+            <div>
+              <strong>Jamie Liu</strong>
+              <span>CEO, RetailPro</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / CTA -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__inner">
+        <div class="contact__text">
+          <span class="section-tag">Get In Touch</span>
+          <h2 class="section-title">Ready to Start Your AI Journey?</h2>
+          <p>Book a free 30-minute discovery call. We'll learn about your business and share how AI can create real value — no commitment required.</p>
+          <div class="contact__details">
+            <div class="contact-detail">
+              <span class="contact-detail__icon">📧</span>
+              <span>hello@nexusai.io</span>
+            </div>
+            <div class="contact-detail">
+              <span class="contact-detail__icon">📞</span>
+              <span>+1 (888) 639-8724</span>
+            </div>
+            <div class="contact-detail">
+              <span class="contact-detail__icon">📍</span>
+              <span>San Francisco · London · Singapore</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact__form-wrap">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Work Email</label>
+              <input type="email" id="email" name="email" placeholder="jane@company.com" required />
+            </div>
+            <div class="form-group">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" placeholder="Acme Corp" />
+            </div>
+            <div class="form-group">
+              <label for="interest">Area of Interest</label>
+              <select id="interest" name="interest">
+                <option value="">Select a service...</option>
+                <option>AI Strategy & Roadmapping</option>
+                <option>Custom Model Development</option>
+                <option>AI Integration & APIs</option>
+                <option>Agentic AI Systems</option>
+                <option>AI Governance & Ethics</option>
+                <option>Data Engineering & MLOps</option>
+                <option>Not Sure — Need Guidance</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Tell Us About Your Challenge</label>
+              <textarea id="message" name="message" rows="4" placeholder="Describe your AI challenge or goal..."></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Book Discovery Call →</button>
+            <p class="form-note">We respond within 1 business day. No spam, ever.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#" class="nav__logo">
+            <span class="logo-icon">⬡</span>
+            <span class="logo-text">NexusAI</span>
+          </a>
+          <p>Transforming businesses through intelligent AI solutions. Strategy, engineering, and beyond.</p>
+        </div>
+        <div class="footer__links">
+          <div class="footer__col">
+            <h4>Services</h4>
+            <a href="#services">AI Strategy</a>
+            <a href="#services">Custom Models</a>
+            <a href="#services">AI Integration</a>
+            <a href="#services">Agentic Systems</a>
+            <a href="#services">MLOps</a>
+          </div>
+          <div class="footer__col">
+            <h4>Company</h4>
+            <a href="#about">About</a>
+            <a href="#process">Process</a>
+            <a href="#case-studies">Case Studies</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div class="footer__col">
+            <h4>Connect</h4>
+            <a href="#">LinkedIn</a>
+            <a href="#">Twitter / X</a>
+            <a href="#">GitHub</a>
+            <a href="#">Newsletter</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 NexusAI. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

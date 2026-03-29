@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>ARIA Assistant</title>
+  <link rel="manifest" href="/phone/manifest.json" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#05040f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/phone/phone.css" />
+</head>
+<body>
+
+<!-- ── Passcode Screen ─────────────────────────────── -->
+<div id="passcodeScreen" class="passcode-screen">
+  <div class="passcode-card">
+    <div class="passcode-logo">
+      <span class="hex">⬡</span>
+      <span>ARIA</span>
+    </div>
+    <p class="passcode-label" id="passcodeLabel">Enter your passcode</p>
+    <div class="passcode-dots" id="passcodeDots">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <div class="numpad">
+      <button class="num-btn" data-n="1">1</button>
+      <button class="num-btn" data-n="2">2</button>
+      <button class="num-btn" data-n="3">3</button>
+      <button class="num-btn" data-n="4">4</button>
+      <button class="num-btn" data-n="5">5</button>
+      <button class="num-btn" data-n="6">6</button>
+      <button class="num-btn" data-n="7">7</button>
+      <button class="num-btn" data-n="8">8</button>
+      <button class="num-btn" data-n="9">9</button>
+      <button class="num-btn" data-n="clear">⌫</button>
+      <button class="num-btn" data-n="0">0</button>
+      <button class="num-btn confirm-btn" data-n="ok">OK</button>
+    </div>
+    <p class="passcode-err" id="passcodeErr"></p>
+  </div>
+</div>
+
+<!-- ── Agent Select Screen ─────────────────────────── -->
+<div id="agentSelectScreen" class="agent-select-screen hidden">
+  <header class="phone-header">
+    <div class="header-logo">
+      <span class="hex-sm">⬡</span>
+      <span id="phoneNameLabel">ARIA</span>
+    </div>
+    <div class="header-right">
+      <span class="online-dot" id="onlineDot"></span>
+    </div>
+  </header>
+
+  <div class="agent-select-body">
+    <h2>How can I help you today?</h2>
+    <p>Select an assistant to start</p>
+    <div class="agent-list" id="agentList"></div>
+  </div>
+</div>
+
+<!-- ── Chat Screen ─────────────────────────────────── -->
+<div id="chatScreen" class="chat-screen hidden">
+  <header class="chat-header">
+    <button class="back-btn" id="backBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+    </button>
+    <div class="chat-agent-info">
+      <span id="chatAgentIcon">🤖</span>
+      <div>
+        <div class="chat-agent-name" id="chatAgentName">Agent</div>
+        <div class="chat-agent-status" id="chatAgentStatus">Ready</div>
+      </div>
+    </div>
+    <button class="clear-chat-btn" id="clearChatBtn" title="New conversation">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+        <polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.1"/>
+      </svg>
+    </button>
+  </header>
+
+  <div class="chat-messages" id="chatMessages"></div>
+
+  <div class="typing-wrap" id="typingWrap" style="display:none">
+    <div class="typing-dots"><span></span><span></span><span></span></div>
+  </div>
+
+  <div class="chat-input-bar">
+    <button class="mic-btn" id="micBtn" title="Voice input">
+      <svg class="mic-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+        <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+        <line x1="12" y1="19" x2="12" y2="23"/>
+        <line x1="8" y1="23" x2="16" y2="23"/>
+      </svg>
+    </button>
+    <input type="text" id="msgInput" placeholder="Type a message…" autocomplete="off" />
+    <button class="send-btn" id="sendBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="22" y1="2" x2="11" y2="13"/>
+        <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<!-- Error screen -->
+<div id="errorScreen" class="error-screen hidden">
+  <div class="hex">⬡</div>
+  <h2>Device Not Found</h2>
+  <p id="errorMsg">This phone ID is not registered. Please contact your administrator.</p>
+</div>
+
+<script src="/phone/phone.js"></script>
+</body>
+</html>

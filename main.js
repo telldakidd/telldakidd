@@ -169,6 +169,30 @@ if (heroStats) counterObserver.observe(heroStats);
   window.addEventListener('resize', () => { resize(); init(); }, { passive: true });
 })();
 
+// ── Pricing toggle ───────────────────────────────────────
+const pricingSwitch = document.getElementById('pricingSwitch');
+const monthlyLabel = document.getElementById('monthlyLabel');
+const yearlyLabel  = document.getElementById('yearlyLabel');
+
+if (pricingSwitch) {
+  let isYearly = false;
+  monthlyLabel.classList.add('active');
+
+  pricingSwitch.addEventListener('click', () => {
+    isYearly = !isYearly;
+    pricingSwitch.classList.toggle('yearly', isYearly);
+    monthlyLabel.classList.toggle('active', !isYearly);
+    yearlyLabel.classList.toggle('active', isYearly);
+
+    document.querySelectorAll('.pricing-card__amount').forEach(el => {
+      el.textContent = isYearly ? el.dataset.yearly : el.dataset.monthly;
+    });
+    document.querySelectorAll('.period-text').forEach(el => {
+      el.textContent = isYearly ? 'month, billed yearly' : 'month';
+    });
+  });
+}
+
 // ── Contact form ──────────────────────────────────────────
 const form = document.getElementById('contactForm');
 if (form) {

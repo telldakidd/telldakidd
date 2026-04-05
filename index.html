@@ -23,6 +23,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#process">Process</a></li>
         <li><a href="#case-studies">Case Studies</a></li>
+        <li><a href="#pricing">Pricing</a></li>
         <li><a href="#contact" class="btn btn--nav">Get Started</a></li>
       </ul>
       <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
@@ -34,6 +35,7 @@
       <a href="#about">About</a>
       <a href="#process">Process</a>
       <a href="#case-studies">Case Studies</a>
+      <a href="#pricing">Pricing</a>
       <a href="#contact">Get Started</a>
     </div>
   </nav>
@@ -328,6 +330,102 @@
               <span class="metric__label">SKUs Optimized</span>
             </div>
           </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Pricing Plans</span>
+        <h2 class="section-title">Choose Your Pixel App Plan</h2>
+        <p class="section-sub">Whether you're listing one phone or running a resale business, we've got the perfect plan for you.</p>
+      </div>
+
+      <div class="pricing__toggle">
+        <span class="pricing__toggle-label" id="monthlyLabel">Monthly</span>
+        <button class="pricing__switch" id="pricingSwitch" aria-label="Toggle billing period">
+          <span class="pricing__switch-knob"></span>
+        </button>
+        <span class="pricing__toggle-label" id="yearlyLabel">Yearly <span class="pricing__save-badge">Save 20%</span></span>
+      </div>
+
+      <div class="pricing__grid">
+
+        <!-- Starter -->
+        <div class="pricing-card">
+          <div class="pricing-card__header">
+            <h3>Starter</h3>
+            <p class="pricing-card__desc">Perfect for selling your personal Pixel phone</p>
+          </div>
+          <div class="pricing-card__price">
+            <span class="pricing-card__currency">$</span>
+            <span class="pricing-card__amount" data-monthly="0" data-yearly="0">0</span>
+            <span class="pricing-card__period">/ <span class="period-text">month</span></span>
+          </div>
+          <ul class="pricing-card__features">
+            <li class="included">1 active listing</li>
+            <li class="included">Basic phone condition report</li>
+            <li class="included">Photo upload (up to 5)</li>
+            <li class="included">Buyer messaging</li>
+            <li class="included">Standard marketplace visibility</li>
+            <li class="excluded">Price analytics</li>
+            <li class="excluded">Featured listings</li>
+            <li class="excluded">Priority support</li>
+          </ul>
+          <a href="#contact" class="btn btn--ghost btn--full">Get Started Free</a>
+        </div>
+
+        <!-- Pro — Popular -->
+        <div class="pricing-card pricing-card--popular">
+          <div class="pricing-card__badge">Most Popular</div>
+          <div class="pricing-card__header">
+            <h3>Pro</h3>
+            <p class="pricing-card__desc">For power sellers and Pixel enthusiasts</p>
+          </div>
+          <div class="pricing-card__price">
+            <span class="pricing-card__currency">$</span>
+            <span class="pricing-card__amount" data-monthly="9.99" data-yearly="7.99">9.99</span>
+            <span class="pricing-card__period">/ <span class="period-text">month</span></span>
+          </div>
+          <ul class="pricing-card__features">
+            <li class="included">Up to 25 active listings</li>
+            <li class="included">Detailed condition grading with AI</li>
+            <li class="included">Photo upload (up to 20)</li>
+            <li class="included">Buyer & seller messaging</li>
+            <li class="included">Boosted marketplace visibility</li>
+            <li class="included">Price analytics & trends</li>
+            <li class="included">3 featured listings / month</li>
+            <li class="excluded">Dedicated account manager</li>
+          </ul>
+          <a href="#contact" class="btn btn--primary btn--full">Start Pro Trial</a>
+        </div>
+
+        <!-- Business -->
+        <div class="pricing-card">
+          <div class="pricing-card__header">
+            <h3>Business</h3>
+            <p class="pricing-card__desc">For resale shops and high-volume sellers</p>
+          </div>
+          <div class="pricing-card__price">
+            <span class="pricing-card__currency">$</span>
+            <span class="pricing-card__amount" data-monthly="29.99" data-yearly="23.99">29.99</span>
+            <span class="pricing-card__period">/ <span class="period-text">month</span></span>
+          </div>
+          <ul class="pricing-card__features">
+            <li class="included">Unlimited active listings</li>
+            <li class="included">AI condition grading + IMEI check</li>
+            <li class="included">Unlimited photo & video uploads</li>
+            <li class="included">Buyer & seller messaging</li>
+            <li class="included">Top marketplace visibility</li>
+            <li class="included">Advanced analytics dashboard</li>
+            <li class="included">Unlimited featured listings</li>
+            <li class="included">Dedicated account manager</li>
+          </ul>
+          <a href="#contact" class="btn btn--ghost btn--full">Contact Sales</a>
         </div>
 
       </div>

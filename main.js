@@ -169,6 +169,121 @@ if (heroStats) counterObserver.observe(heroStats);
   window.addEventListener('resize', () => { resize(); init(); }, { passive: true });
 })();
 
+// ── Live demo form ────────────────────────────────────────
+const OFFER_LABELS = {
+  ai_receptionist: 'AI Receptionist',
+  lead_scraping_outreach: 'Lead Scraping + Outreach',
+  customer_support_ai: 'Customer Support AI',
+  custom_workflow_automation: 'Custom Workflow Automation',
+};
+
+const demoForm = document.getElementById('demoForm');
+if (demoForm) {
+  const urlInput = document.getElementById('demoUrl');
+  const submitBtn = document.getElementById('demoSubmit');
+  const status = document.getElementById('demoStatus');
+  const statusText = document.getElementById('demoStatusText');
+  const errorBox = document.getElementById('demoError');
+  const resultBox = document.getElementById('demoResult');
+
+  const setStatus = (text) => {
+    statusText.textContent = text;
+    status.hidden = false;
+  };
+  const hideStatus = () => { status.hidden = true; };
+  const showError = (msg) => {
+    errorBox.textContent = msg;
+    errorBox.hidden = false;
+  };
+  const hideError = () => { errorBox.hidden = true; };
+
+  const renderResult = (data) => {
+    document.getElementById('resHostname').textContent = data.hostname;
+    document.getElementById('resIndustry').textContent = data.industry;
+    document.getElementById('resOffer').textContent =
+      OFFER_LABELS[data.best_offer_match] ?? data.best_offer_match;
+    document.getElementById('resSummary').textContent = data.company_summary;
+    document.getElementById('resRationale').textContent = data.offer_rationale;
+    document.getElementById('resFirstLine').textContent = data.personalized_first_line;
+
+    const painsEl = document.getElementById('resPains');
+    painsEl.innerHTML = '';
+    for (const p of data.likely_pain_points) {
+      const li = document.createElement('li');
+      li.textContent = p;
+      painsEl.appendChild(li);
+    }
+
+    const emailsEl = document.getElementById('resEmails');
+    emailsEl.innerHTML = '';
+    for (const email of data.email_sequence) {
+      const card = document.createElement('div');
+      card.className = 'demo__email';
+      const head = document.createElement('div');
+      head.className = 'demo__email-head';
+      const day = document.createElement('span');
+      day.className = 'demo__email-day';
+      day.textContent = `Day ${email.day}`;
+      const subj = document.createElement('span');
+      subj.className = 'demo__email-subject';
+      subj.textContent = email.subject;
+      head.appendChild(day);
+      head.appendChild(subj);
+      const body = document.createElement('div');
+      body.className = 'demo__email-body';
+      body.textContent = email.body;
+      card.appendChild(head);
+      card.appendChild(body);
+      emailsEl.appendChild(card);
+    }
+
+    const usage = data.usage || {};
+    document.getElementById('resUsage').textContent =
+      `tokens: in=${usage.input_tokens ?? '?'}  out=${usage.output_tokens ?? '?'}`;
+
+    resultBox.hidden = false;
+  };
+
+  demoForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const url = urlInput.value.trim();
+    if (!url) return;
+
+    hideError();
+    resultBox.hidden = true;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Working...';
+
+    setStatus('Scraping site...');
+    setTimeout(() => {
+      if (!status.hidden) setStatus('Analyzing with Claude...');
+    }, 2000);
+    setTimeout(() => {
+      if (!status.hidden) setStatus('Drafting outreach sequence...');
+    }, 6000);
+
+    try {
+      const res = await fetch('/api/enrich', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        showError(data.error || `Request failed (${res.status})`);
+      } else {
+        renderResult(data);
+      }
+    } catch (err) {
+      showError('Network error. Check your connection and try again.');
+    } finally {
+      hideStatus();
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Generate Outreach';
+    }
+  });
+}
+
 // ── Contact form ──────────────────────────────────────────
 const form = document.getElementById('contactForm');
 if (form) {

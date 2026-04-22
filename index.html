@@ -23,6 +23,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#process">Process</a></li>
         <li><a href="#case-studies">Case Studies</a></li>
+        <li><a href="#demo">Live Demo</a></li>
         <li><a href="#contact" class="btn btn--nav">Get Started</a></li>
       </ul>
       <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
@@ -34,6 +35,7 @@
       <a href="#about">About</a>
       <a href="#process">Process</a>
       <a href="#case-studies">Case Studies</a>
+      <a href="#demo">Live Demo</a>
       <a href="#contact">Get Started</a>
     </div>
   </nav>
@@ -379,6 +381,85 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Demo -->
+  <section class="demo" id="demo">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Try It Live</span>
+        <h2 class="section-title">See Our AI Work In Real Time</h2>
+        <p class="section-sub">Drop in any company URL. In about 15 seconds our system will scrape their site, identify their pain points, and draft a full personalized cold-outreach sequence — the same pipeline we build for clients.</p>
+      </div>
+
+      <div class="demo__card">
+        <form class="demo__form" id="demoForm" autocomplete="off">
+          <input
+            type="text"
+            id="demoUrl"
+            name="url"
+            placeholder="e.g. stripe.com"
+            aria-label="Company URL"
+            required
+          />
+          <button type="submit" class="btn btn--primary" id="demoSubmit">
+            Generate Outreach
+          </button>
+        </form>
+        <p class="demo__hint">Free · Limited to 5 runs per 10 minutes · No signup</p>
+
+        <div class="demo__status" id="demoStatus" hidden>
+          <div class="demo__spinner"></div>
+          <span id="demoStatusText">Scraping site...</span>
+        </div>
+
+        <div class="demo__error" id="demoError" hidden></div>
+
+        <div class="demo__result" id="demoResult" hidden>
+          <div class="demo__meta">
+            <div>
+              <span class="demo__meta-label">Company</span>
+              <span class="demo__meta-value" id="resHostname"></span>
+            </div>
+            <div>
+              <span class="demo__meta-label">Industry</span>
+              <span class="demo__meta-value" id="resIndustry"></span>
+            </div>
+            <div>
+              <span class="demo__meta-label">Best-fit offer</span>
+              <span class="demo__meta-value" id="resOffer"></span>
+            </div>
+          </div>
+
+          <div class="demo__block">
+            <h4>Summary</h4>
+            <p id="resSummary"></p>
+          </div>
+
+          <div class="demo__block">
+            <h4>Likely pain points</h4>
+            <ul id="resPains"></ul>
+          </div>
+
+          <div class="demo__block">
+            <h4>Why this offer</h4>
+            <p id="resRationale"></p>
+          </div>
+
+          <div class="demo__block">
+            <h4>Personalized first line</h4>
+            <p class="demo__first-line" id="resFirstLine"></p>
+          </div>
+
+          <div class="demo__block">
+            <h4>Email sequence</h4>
+            <div id="resEmails"></div>
+          </div>
+
+          <p class="demo__usage" id="resUsage"></p>
+        </div>
       </div>
     </div>
   </section>
